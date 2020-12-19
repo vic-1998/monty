@@ -7,6 +7,8 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <stdio.h>
+#include <ctype.h>
 
 #define DELIMI "\n\t\r "
 
@@ -43,5 +45,7 @@ typedef struct instruction_s
 
 /* PROTOTYPES */
 int buil_func (char *opcode, stack_t **stack, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number, char *n);
+void pall(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */

@@ -36,8 +36,7 @@ int main(int argc, char *argv[])
 		opcode = strtok(line, DELIMI);
 		if (opcode == NULL || strncmp(opcode, "#", 1) == 0)
 			continue;
-		
-		if (strcmp(opcode,"push"))
+		if (strcmp(opcode,"push") == 0)
 		{
 			n = strtok(NULL, DELIMI);
 			push(&stack, line_number, n);
@@ -48,5 +47,8 @@ int main(int argc, char *argv[])
 		}
 		
 	}
+	free(stack);
+	free(line);
+	free(fp);
 	return (EXIT_SUCCESS); /* checkear si sale con un llamado */
 }
