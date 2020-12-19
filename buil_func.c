@@ -10,7 +10,8 @@ int buil_func(char *opcode, stack_t **stack, unsigned int line_number)
 	int i;
 
 	instruction_t functions[] = {
-		{"pall", pall}
+		{"pall", pall},
+		{"pint", pint}
 		};
 
 	for (i = 0; functions[i].opcode != NULL; i++)
