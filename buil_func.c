@@ -19,7 +19,10 @@ int buil_func(char *opcode, stack_t **stack, unsigned int line_number)
 	    {"sub", sub},
 	    {"div", _div},
 	    {"mul", _mul},
-	    {"mod", _mod}};
+	    {"mod", _mod},
+	    {"pchar", pchar},
+	    {"pstr", pstr},
+	    {"rotl", rotl}};
 
 	for (i = 0; functions[i].opcode != NULL; i++)
 	{
