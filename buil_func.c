@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * 
- * 
+ *
+ *
  */
 
 int buil_func(char *opcode, stack_t **stack, unsigned int line_number)
@@ -10,13 +10,16 @@ int buil_func(char *opcode, stack_t **stack, unsigned int line_number)
 	int i;
 
 	instruction_t functions[] = {
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", nop}
-		};
+	    {"pall", pall},
+	    {"pint", pint},
+	    {"pop", pop},
+	    {"swap", swap},
+	    {"add", add},
+	    {"nop", nop},
+	    {"sub", sub},
+	    {"div", _div},
+	    {"mul", _mul},
+	    {"mod", _mod}};
 
 	for (i = 0; functions[i].opcode != NULL; i++)
 	{
