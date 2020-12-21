@@ -14,8 +14,8 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 
 	if (n == NULL)
 	{
-		fprintf(stderr,"L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		return;
 	}
 
 	for (i = 0; n[i] != '\0'; i++)
@@ -24,16 +24,16 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 			continue;
 		if (isdigit(n[i]) == 0)
 		{
-			fprintf(stderr,"L%d: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			return;
 		}
 	}
 
 	new_nodo = malloc(sizeof(stack_t));
 	if (new_nodo == NULL)
 	{
-		fprintf(stderr,"Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "Error: malloc failed\n");
+		return;
 	}
 
 	new_nodo->n = atoi(n);
