@@ -9,11 +9,9 @@
 void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 {
 	stack_t *path = *stack;
+	(void)line_number;
 
-	if (stack == NULL || *stack == NULL)
-		return;
-
-	while (path != NULL)
+	while (path)
 	{
 		printf("%d\n", path->n);
 		path = path->next;
