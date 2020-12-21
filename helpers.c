@@ -8,7 +8,7 @@
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	const stack_t *path;
+	stack_t *path = *stack;
 	(void)line_number;
 
 	while (path)
