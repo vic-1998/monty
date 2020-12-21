@@ -6,17 +6,15 @@
  * @line_number: line number of instruction
  * Return: void
  */
-void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *path = *stack;
+    stack_t *temp;
 
-	if (*stack == NULL)
-		return;
-	while (path != NULL)
-	{
-		printf("%d\n", path->n);
-		path = path->next;
-	}
+    (void)line_number;
+
+    if (stack != NULL || *stack != NULL)
+        for (temp = *stack; temp != NULL; temp = temp->next)
+            fprintf(stdout, "%d\n", temp->n);
 }
 
 /**
