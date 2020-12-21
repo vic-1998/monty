@@ -25,7 +25,8 @@ int buil_func(char *opcode, stack_t **stack, unsigned int line_number)
 	    {"mod", _mod},
 	    {"pchar", pchar},
 	    {"pstr", pstr},
-	    {"rotl", rotl}};
+	    {"rotl", rotl},
+	    {NULL, NULL}};
 
 	for (i = 0; functions[i].opcode != NULL; i++)
 	{
@@ -36,5 +37,5 @@ int buil_func(char *opcode, stack_t **stack, unsigned int line_number)
 		}
 	}
 	printf("L%d: unknown instruction %s\n", line_number, opcode);
-	return (EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 }
