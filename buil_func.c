@@ -7,7 +7,6 @@
  * @line_number: line number of opcode from user input
  * Return: 0 on success, 1 on failure
  */
-
 int buil_func(char *opcode, stack_t **stack, unsigned int line_number)
 {
 	int i;

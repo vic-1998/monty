@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
- * push - add new item to top of stack
+ * push - add new_nodo item to top of stack
  * @stack: pointer to stack
  * @line_number: line number of instruction
- * @n: value of new item on stack
+ * @n: value of new_nodo item on stack
  * Return: void, exit with -1 on failure
  */
 void push(stack_t **stack, unsigned int line_number, char *n)
@@ -22,7 +22,7 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 	{
 		if (n[0] == '-' && i == 0)
 			continue;
-		if (isdigit(n[i]) == '\0')
+		if (isdigit(n[i]) == 0)
 		{
 			printf("L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
@@ -39,7 +39,6 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 	new_nodo->n = atoi(n);
 	new_nodo->prev = NULL;
 	new_nodo->next = NULL;
-
 	if (*stack != NULL)
 	{
 		new_nodo->next = *stack;
@@ -59,7 +58,7 @@ void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *poper;
 
-	if (*stack == NULL)
+	if (stack == NULL || *stack == NULL)
 	{
 		printf("L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
@@ -78,9 +77,10 @@ void pop(stack_t **stack, unsigned int line_number)
  */
 void swap(stack_t **stack, unsigned int line_number)
 {
-	int temp1, temp2;
+	int temp1;
+	int temp2;
 
-	if (*stack == NULL)
+	if (len_stack(stack) < 2)
 	{
 		printf("L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
@@ -88,6 +88,7 @@ void swap(stack_t **stack, unsigned int line_number)
 
 	temp1 = (*stack)->n;
 	temp2 = (*stack)->next->n;
+
 	(*stack)->n = temp2;
 	(*stack)->next->n = temp1;
 }

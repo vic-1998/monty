@@ -7,23 +7,22 @@
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
+	stack_t *top, *bottom;
 	(void)line_number;
 
-	if (*stack == NULL || stack == NULL)
-	{
-		nop(stack, line_number);
-	}
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
+		return;
 
-	temp = *stack;
-	*stack = temp->next;
+	top = (*stack)->next;
+	bottom = (*stack)->next;
+	while (bottom->next != NULL)
+		bottom = bottom->next;
 
-	while (temp->next)
-		temp = temp->next;
-	temp->next = (*stack)->prev;
-	temp->next->next = NULL;
-	temp->next->prev = temp;
-	(*stack)->prev = NULL;
+	top->next->prev = *stack;
+	(*stack)->next = top->next;
+	bottom->next = top;
+	top->next = NULL;
+	top->prev = bottom;
 }
 
 /**
@@ -34,21 +33,20 @@ void rotl(stack_t **stack, unsigned int line_number)
  */
 void rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp, *temp2;
+	stack_t *top, *bottom;
 	(void)line_number;
-	if (*stack == NULL || stack == NULL)
-	{
-		nop(stack, line_number);
-	}
 
-	temp = (*stack)->next;
-	temp2 = (*stack)->next;
-	while (temp2->next != NULL)
-		temp2 = temp2->next;
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
+		return;
 
-	temp2->prev->next = NULL;
-	(*stack)->next = temp2;
-	temp2->prev = *stack;
-	temp2->next = temp;
-	temp->prev = temp2;
+	top = (*stack)->next;
+	bottom = (*stack)->next;
+	while (bottom->next != NULL)
+		bottom = bottom->next;
+
+	bottom->prev->next = NULL;
+	(*stack)->next = bottom;
+	bottom->prev = *stack;
+	bottom->next = top;
+	top->prev = bottom;
 }

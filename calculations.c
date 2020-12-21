@@ -8,7 +8,9 @@
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	int sum = 0, n1, n2;
+	int n1;
+	int n2;
+	int suma;
 
 	if (len_stack(stack) < 2)
 	{
@@ -18,9 +20,12 @@ void add(stack_t **stack, unsigned int line_number)
 
 	n1 = (*stack)->n;
 	n2 = (*stack)->next->n;
-	sum = n1 + n2;
+
+	suma = n1 + n2;
+
 	pop(stack, line_number);
-	(*stack)->n = sum;
+
+	(*stack)->n = suma;
 }
 /**
  * sub - subtracts top two elements of stack
@@ -30,7 +35,9 @@ void add(stack_t **stack, unsigned int line_number)
  */
 void sub(stack_t **stack, unsigned int line_number)
 {
-	int subtract = 0, n1, n2;
+	int n1;
+	int n2;
+	int sus;
 
 	if (len_stack(stack) < 2)
 	{
@@ -40,9 +47,12 @@ void sub(stack_t **stack, unsigned int line_number)
 
 	n1 = (*stack)->n;
 	n2 = (*stack)->next->n;
-	subtract = n2 - n1;
+
+	sus = n2 - n1;
+
 	pop(stack, line_number);
-	(*stack)->n = subtract;
+
+	(*stack)->n = sus;
 }
 
 /**
@@ -53,13 +63,16 @@ void sub(stack_t **stack, unsigned int line_number)
  */
 void _div(stack_t **stack, unsigned int line_number)
 {
-	int divi = 0, n1, n2;
+	int n1;
+	int n2;
+	int divi;
 
 	if (len_stack(stack) < 2)
 	{
 		printf("L%d: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+
 	n1 = (*stack)->n;
 	n2 = (*stack)->next->n;
 	if (n1 == 0)
@@ -70,6 +83,7 @@ void _div(stack_t **stack, unsigned int line_number)
 	divi = n2 / n1;
 
 	pop(stack, line_number);
+
 	(*stack)->n = divi;
 }
 
@@ -81,7 +95,9 @@ void _div(stack_t **stack, unsigned int line_number)
  */
 void _mul(stack_t **stack, unsigned int line_number)
 {
-	int sum = 0, n1, n2;
+	int n1;
+	int n2;
+	int multi;
 
 	if (len_stack(stack) < 2)
 	{
@@ -91,9 +107,12 @@ void _mul(stack_t **stack, unsigned int line_number)
 
 	n1 = (*stack)->n;
 	n2 = (*stack)->next->n;
-	sum = n1 * n2;
+
+	multi = n1 * n2;
+
 	pop(stack, line_number);
-	(*stack)->n = sum;
+
+	(*stack)->n = multi;
 }
 
 /**
@@ -104,13 +123,16 @@ void _mul(stack_t **stack, unsigned int line_number)
  */
 void _mod(stack_t **stack, unsigned int line_number)
 {
-	int res = 0, n1, n2;
+	int n1;
+	int n2;
+	int res;
 
 	if (len_stack(stack) < 2)
 	{
 		printf("L%d: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+
 	n1 = (*stack)->n;
 	n2 = (*stack)->next->n;
 	if (n1 == 0)
@@ -118,8 +140,10 @@ void _mod(stack_t **stack, unsigned int line_number)
 		printf("L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+
 	res = n2 % n1;
 
 	pop(stack, line_number);
+
 	(*stack)->n = res;
 }

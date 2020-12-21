@@ -8,15 +8,16 @@
 size_t len_stack(stack_t **stack)
 {
 	stack_t *data;
-	unsigned int i = 0;
+	unsigned int i;
 
 	data = *stack;
-
+	i = 0;
 	while (data != NULL)
 	{
 		data = data->next;
 		i++;
 	}
+
 	return (i);
 }
 /**
@@ -26,13 +27,13 @@ size_t len_stack(stack_t **stack)
  */
 void _stackfree(stack_t **stack)
 {
-	stack_t *current;
+	stack_t *data;
 
 	while (*stack != NULL)
 	{
-		current = *stack;
+		data = *stack;
 		*stack = (*stack)->next;
-		free(current);
+		free(data);
 	}
 }
 
