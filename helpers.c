@@ -9,17 +9,13 @@
 void pall(stack_t **stack, unsigned int line_number)
 {
 	const stack_t *path;
+	(void)line_number;
 
-	if (stack == NULL)
-		exit(EXIT_FAILURE);
-
-	path = *stack;
-	while (path != NULL)
+	while (path)
 	{
-		print("%d\n", path->n);
+		printf("%d\n", path->n);
 		path = path->next;
 	}
-	(void)line_number;
 }
 
 /**
