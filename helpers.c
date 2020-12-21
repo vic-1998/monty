@@ -8,11 +8,15 @@
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *path = (*stack)->next;
+	const stack_t *path;
 
-	while (path)
+	if (stack == NULL)
+		exit(EXIT_FAILURE);
+
+	path = *stack;
+	while (path != NULL)
 	{
-		printf("%d\n", path->n);
+		fprintf(stdout, "%d\n", path->n);
 		path = path->next;
 	}
 	(void)line_number;
