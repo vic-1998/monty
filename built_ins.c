@@ -14,7 +14,7 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 
 	if (n == NULL)
 	{
-		printf("L%d: usage: push integer\n", line_number);
+		fprintf(stderr,"L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -24,7 +24,7 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 			continue;
 		if (isdigit(n[i]) == 0)
 		{
-			printf("L%d: usage: push integer\n", line_number);
+			fprintf(stderr,"L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -32,7 +32,7 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 	new_nodo = malloc(sizeof(stack_t));
 	if (new_nodo == NULL)
 	{
-		printf("Error: malloc failed\n");
+		fprintf(stderr,"Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 
