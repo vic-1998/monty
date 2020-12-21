@@ -59,6 +59,7 @@ void _mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
+void rotrf(stack_t **stack, unsigned int line_number);
 void _stackfree(stack_t **stack);
 void _all(stack_t *stack, char *line, FILE *fp);
 

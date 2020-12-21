@@ -23,28 +23,29 @@ void rotl(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * rotr - rotates stack to right
+ * rotrf - rotates stack to right
  * @stack: pointer to the head node pointer of stack
  * @line_number: the line number
  * Return: Nothing.
  */
-void rotr(stack_t **stack, unsigned int line_number)
+void rotrf(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp, *temp2;
 	(void)line_number;
-	if (*stack == NULL || stack == NULL)
+	if (!stack || !(*stack) || !(*stack)->next)
+		return;
+
+	temp = *stack;
+	temp2 = temp;
+
+	while (temp2->next)
 	{
-		nop(stack, line_number);
+		temp2 = temp2->next;
 	}
 
-	temp = (*stack)->next;
-	temp2 = (*stack)->next;
-	while (temp2->next != NULL)
-		temp2 = temp2->next;
-
 	temp2->prev->next = NULL;
-	(*stack)->next = temp2;
-	temp2->prev = *stack;
-	temp2->next = temp;
+	temp2->prev = NULL;
 	temp->prev = temp2;
+	temp2->next = temp;
+	*stack = temp2;
 }
