@@ -28,7 +28,7 @@ void rotl(stack_t **stack, unsigned int line_number)
  * @line_number: the line number
  * Return: Nothing.
  */
-void rotrf(stack_t **stack, unsigned int line_number)
+void op_rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp, *temp2;
 	(void)line_number;
