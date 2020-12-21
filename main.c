@@ -7,26 +7,27 @@
  */
 int main(int argc, char *argv[])
 {
-	size_t len;
-	ssize_t read = 0;
-	FILE *fp; /*para utilizar con fopen*/
-	unsigned int line_number;
-	char *opcode, *n;
-	char *line = NULL; /* para hacer getline */
+	FILE *fp;
 	stack_t *stack = NULL;
+	char *line = NULL, *opcode, *n;
+	unsigned int line_number;
+	size_t len = 0;
+	ssize_t read;
 
-	if (argc < 2 || argc > 2)
+	if (argc != 2)
 	{
-		printf("USAGE: monty file");
+		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
+
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	line_number = 0; /* para capturar linea de error del documento*/
+
+	line_number = 0;
 	while ((read = getline(&line, &len, fp)) != -1)
 	{
 		line_number++;
@@ -41,8 +42,7 @@ int main(int argc, char *argv[])
 		else
 			buil_func(opcode, &stack, line_number);
 	}
-	free(stack);
-	free(line);
-	free(fp);
-	return (EXIT_SUCCESS); /* checkear si sale con un llamado */
+
+	_all(stack, line, fp);
+	return (EXIT_SUCCESS);
 }
