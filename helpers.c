@@ -10,10 +10,7 @@ void _pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *path = *stack;
 
-	if (stack == NULL || *stack == NULL)
-		return;
-
-	while (path != NULL)
+	while (path)
 	{
 		printf("%d\n", path->n);
 		path = path->next;
