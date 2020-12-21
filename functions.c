@@ -20,7 +20,7 @@ size_t len_stack(stack_t **stack)
 	return (i);
 }
 /**
- * free_stack - frees a stack_t stack
+ * _stackfree - frees a stack_t stack
  * @stack: stack to be freed
  * Return: void
  */
@@ -37,7 +37,7 @@ void _stackfree(stack_t **stack)
 }
 
 /**
- * free_all - frees line and fp
+ * _all - frees line and fp
  * @stack: stack to free
  * @line: line to free from getline
  * @fp: file pointer to free
