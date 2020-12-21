@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * 
- * 
- * 
+ * add - adds top two elements of stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void, exit with -1 on failure
  */
-
 void add(stack_t **stack, unsigned int line_number)
 {
 	int sum = 0, n1, n2;
@@ -23,9 +23,10 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->n = sum;
 }
 /**
- * 
- * 
- * 
+ * sub - subtracts top two elements of stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void, exit with -1 on failure
  */
 void sub(stack_t **stack, unsigned int line_number)
 {
@@ -45,9 +46,10 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * 
- * 
- * 
+ * _div - divides top two elements of stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void, exit with -1 on failure
  */
 void _div(stack_t **stack, unsigned int line_number)
 {
@@ -72,9 +74,10 @@ void _div(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * 
- * 
- * 
+ * _mul - multiplies top two elements of stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void, exit with -1 on failure
  */
 void _mul(stack_t **stack, unsigned int line_number)
 {
@@ -94,9 +97,10 @@ void _mul(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * 
- * 
- * 
+ * _mod - divides top two elements of stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void, exit with -1 on failure
  */
 void _mod(stack_t **stack, unsigned int line_number)
 {

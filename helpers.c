@@ -1,9 +1,10 @@
 #include "monty.h"
 
 /**
- * 
- * 
- * 
+ * pall - prints the value of all items on the stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void
  */
 void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 {
@@ -19,13 +20,12 @@ void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 	}
 }
 
-
 /**
- * 
- * 
- * 
+ * pint - prints value at the top of the stack, plus new line
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void
  */
-
 void pint(stack_t **stack, unsigned int line_number)
 {
 	int head;
@@ -40,13 +40,12 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", head);
 }
 
-
 /**
- * 
- * 
- * 
+ * pchar - prints the char at the top of the stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void
  */
-
 void pchar(stack_t **stack, unsigned int line_number)
 {
 	int _char;
@@ -68,9 +67,11 @@ void pchar(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * 
+ * pstr - prints the string starting from the top of the stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void
  */
-
 void pstr(stack_t **stack, unsigned int line_number)
 {
 	int _char;
@@ -78,7 +79,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 	m = *stack;
 
-	while(m != NULL)
+	while (m != NULL)
 	{
 		_char = m->n;
 		if (_char > 0 && _char < 127)
@@ -88,7 +89,6 @@ void pstr(stack_t **stack, unsigned int line_number)
 		}
 		else
 			break;
-		
 	}
 	putchar('\n');
 }

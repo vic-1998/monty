@@ -1,9 +1,11 @@
 #include "monty.h"
 
 /**
- * 
- * 
- * 
+ * push - add new item to top of stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * @n: value of new item on stack
+ * Return: void, exit with -1 on failure
  */
 void push(stack_t **stack, unsigned int line_number, char *n)
 {
@@ -48,10 +50,11 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 }
 
 /**
- * 
- * 
+ * pop - remove item at the top of stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void, exit with -1 on failure
  */
-
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *poper;
@@ -68,9 +71,11 @@ void pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * 
+ * swap - swaps the value of the top two elements on the stack
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void, exit with -1 on failure
  */
-
 void swap(stack_t **stack, unsigned int line_number)
 {
 	int temp1, temp2;
@@ -87,7 +92,13 @@ void swap(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n = temp1;
 }
 
-void nop(stack_t **stack, unsigned  int	 line_number)
+/**
+ * nop - does nothing
+ * @stack: pointer to stack
+ * @line_number: line number of instruction
+ * Return: void
+ */
+void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;

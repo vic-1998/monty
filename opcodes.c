@@ -1,10 +1,10 @@
 #include "monty.h"
-
 /**
- * 
- * 
+ * rotl - rotates the stack to the top
+ * @stack: pointer to the head node pointer of stack
+ * @line_number: the line number
+ * Return: Nothing.
  */
-
 void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
@@ -26,6 +26,12 @@ void rotl(stack_t **stack, unsigned int line_number)
 	(*stack)->prev = NULL;
 }
 
+/**
+ * rotr - rotates stack to right
+ * @stack: pointer to the head node pointer of stack
+ * @line_number: the line number
+ * Return: Nothing.
+ */
 void rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp, *temp2;
