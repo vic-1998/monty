@@ -23,7 +23,7 @@ void rotl(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * rotr - rotates stack to right
+ * op_rotr - rotates stack to right
  * @stack: pointer to the head node pointer of stack
  * @line_number: the line number
  * Return: Nothing.
