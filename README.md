@@ -48,7 +48,7 @@ The pall function prints all the values on the stack, starting from the top of t
 
 ---
 
-## How to use it :laptop:
+## How to use it :computer:
 
 ### The Monty language
 
@@ -60,7 +60,7 @@ Files containing Monty byte codes usually have the .m extension. Most of the ind
 
 Example monty file 000.m
 
-'''
+```
 push 0
 push 1
 push 2
@@ -71,7 +71,7 @@ push 4
       push    6        
 pall
 
-'''
+```
 
 ---
 ## Authors :sunglasses:
